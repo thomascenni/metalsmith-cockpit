@@ -6,7 +6,6 @@ var permalinks = require('metalsmith-permalinks');
 var remote = require('metalsmith-remote-json-to-files');
 var tags = require('metalsmith-tags');
 var categories = require('metalsmith-tags');
-var serve = require('metalsmith-serve');
 
 var COKPIT_POSTS_URL = process.env.COKPIT_POSTS_URL;
 if (COKPIT_POSTS_URL == null || COKPIT_POSTS_URL.length === 0) {
@@ -104,7 +103,6 @@ Metalsmith(__dirname)
         "default": "page.njk"
     }))
     .use(permalinks({}))
-    .use(serve())
     .build(function (err) {
         if (err) throw err;
     });
