@@ -11,8 +11,6 @@ var COKPIT_POSTS_URL = process.env.COKPIT_POSTS_URL;
 if (COKPIT_POSTS_URL == null || COKPIT_POSTS_URL.length === 0) {
     COKPIT_POSTS_URL = 'https://raw.githubusercontent.com/thomascenni/metalsmith-cockpit-fake-data/master/data.json';
     console.log("COKPIT_POSTS_URL is not set, using fake data " + COKPIT_POSTS_URL);
-} else {
-    console.log("COKPIT_POSTS_URL is set to ", COKPIT_POSTS_URL);
 }
 
 function getPosts(json) {
