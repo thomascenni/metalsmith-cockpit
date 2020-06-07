@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block maincontent %}
+<section class="section">
+    <div class="container">
+        <div class="content">
+            <p>
+                Posts with tag #{{tag}}:
+            </p>
+            <ul>
+                {% for post in pagination.files %}
+                <li>
+                    <a href="/posts/{{ post.slug }}">{{ post.title }}</a>
+                    {{ post.dateString }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -102,3 +102,8 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Static output directory and VS settings
+build/
+.DS_Store
+.vscode

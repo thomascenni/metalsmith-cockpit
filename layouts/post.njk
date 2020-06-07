@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block maincontent %}
+<section class="section">
+    <div class="container">
+        <div class="content">
+            <h1 class="title">{{title}}</h1>
+            {% if tags %}
+            Tags:
+                {% for tag in tags %}
+                    <span class="tag is-primary"><a href="/tag/{{ tag.slug }}">{{ tag.name }}</a></span>
+                {% endfor %}
+            {% endif %}
+            {% if category %}
+            Category:
+                {% for item in category %}
+                    <a href="/category/{{ item.slug }}">{{ item.name }}</a>
+                {% endfor %}
+            {% endif %}
+            {{contents|safe}}
+        </div>
+    </div>
+</section>
+{% endblock %}

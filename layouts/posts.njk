@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block maincontent %}
+<section class="section">
+    <div class="container">
+        <h1 class="title">Latest posts:</h1>
+        <ol type="1">
+            {% for post in collections.posts %}
+            <li>
+                <a href="{{ post.slug }}">{{ post.title }}</a>
+                {{ post.dateString }}
+            </li>
+            {% else %}
+            <article class="message is-danger">
+                <div class="message-body">
+                    No posts defined.
+                </div>
+            </article>
+            {% endfor %}
+        </ol>
+    </div>
+</section>
+{% endblock %}
