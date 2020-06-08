@@ -21,14 +21,14 @@ function getPosts(json) {
         day: 'numeric'
     }
     return entries.reduce((prev, item) => {
-        var slug = item.slug;
+        var slug = item.title_slug;
         const filename = `posts/${ slug }.md`
         return Object.assign(prev, {
             [filename]: {
                 layout: 'post.njk',
                 collection: 'posts',
                 title: item.title,
-                slug: item.slug,
+                slug: slug,
                 tags: item.tags,
                 category: item.category,
                 date: new Date(item.date),
